@@ -1,9 +1,78 @@
-/* Estilos Generales */
+/* =====================
+   Estilos Generales
+   ===================== */
+
 body {
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
+background-color: #f0f0f0;
+color: #333;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2e7d32;                   /* Verde oscuro elegante */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    font-family: 'Trebuchet MS', sans-serif; /* Fuente natural y elegante */
+    padding-bottom: 10px;
+}
+
+/* Efecto hover para h1 (opcional) */
+h1:hover {
+    color: #388e3c; /* Cambia el color a un verde ligeramente más oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+h2 {
+    font-size: 2em;                       /* Tamaño adecuado para títulos intermedios */
+    color: #6ab47b;                        /* Verde suave, complementa el tema natural */
+    font-weight: bold;
+    text-align: center;                    /* Centrado para destacar el subtítulo */
+    font-family: 'Trebuchet MS', sans-serif; /* Fuente profesional y accesible */
+    margin-bottom: 15px;                   /* Espaciado inferior */
+    padding-bottom: 5px;
+    border-bottom: 2px solid #a8d5ba;      /* Línea decorativa para separar secciones */
+    letter-spacing: 0.03em;                /* Espaciado entre letras */
+}
+
+h3 {
+    font-size: 1.6em;                      /* Tamaño reducido para distinguirlo de h2 */
+    color: #388e3c;                        /* Un verde ligeramente más oscuro */
+    font-weight: 600;
+    font-family: 'Trebuchet MS', sans-serif; /* Fuente profesional y accesible */
+    margin-bottom: 10px;                   /* Espacio inferior */
+    text-transform: uppercase;             /* Todo en mayúsculas para darle fuerza */
+    letter-spacing: 0.02em;                /* Ligero espaciado para legibilidad */
+}
+
+
+p {
+    font-size: 1.5em;             /* Tamaño de texto legible y cómodo */
+    line-height: 1.6;             /* Espaciado para facilitar la lectura */
+    color: #333;                  /* Color gris oscuro para contraste */
+    font-family: 'Trebuchet MS', sans-serif;/* Fuente clara y profesional */
+    margin-bottom: 15px;          /* Espacio entre párrafos */
+    text-align: justify;          /* Justifica el texto para un acabado profesional */
+}
+
+p, ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
 .emphasize {
@@ -11,90 +80,115 @@ body {
     font-weight: bold;
 }
 
-.call-to-action {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 20px;
-    background-color: #27ae60;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    text-transform: uppercase;
+.bullet {
+    color: #000000;
 }
 
+/* =====================
+   Estilos del Menú de Navegación (Navbar)
+   ===================== */
 
-.navbar {
-    background: linear-gradient(90deg, #004b03, #019b28); 
+#navbar {
+    background-color: rgba(0, 0, 0, 0.068);
+    padding: 15px 20px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-/* Cambiar el color del texto del menú */
-.navbar .navbar-brand, .navbar .nav-link {
-    font-weight: bold; 
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Sombra ligera para el texto */
+#navbar.scrolled {
+    background-color: rgba(2, 99, 50, 0.863);
+    padding: 10px 20px;
 }
 
-/* Efecto de hover para los enlaces del menú */
-.navbar .nav-link:hover {
-    color: #ffeb3b; /* Amarillo brillante al hacer hover */
+#navbar .navbar-brand, 
+#navbar .nav-link {
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Personalizar el botón de menú colapsado (hamburguesa) */
+#navbar .navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
+#navbar .nav-link:hover {
+    color: #00ff3c !important;
+}
+
 .navbar-toggler {
     border: none;
-    background-color: #058a10; /* Color amarillo para el botón */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Personalizar el icono de hamburguesa */
 .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;base64,...'); /* Puedes usar una imagen SVG personalizada */
+    background-image: url('data:image/svg+xml;base64,...');
 }
 
+/* =====================
+   Carrusel de Imágenes
+   ===================== */
 
 .carousel-item {
-    height: 100vh; /* 60% de la altura de la ventana */
+    height: 100vh;
 }
+
 .carousel-item img {
-    object-fit: cover; /* Asegura que las imágenes mantengan proporción */
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
-/* Capciones responsivas */
+
 .carousel-caption h5 {
-    color: #02ff2c; /* Color amarillo, puedes personalizarlo */
-    font-size: 2rem; /* Ajusta el tamaño si es necesario */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Agrega sombra al texto para mejor visibilidad */
+    color: #02ff2c;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-caption p {
-    color: #ffffff; /* Color blanco */
-    font-size: 2rem; /* Ajusta el tamaño si es necesario */
-    text-shadow: 8px 8px 24px rgb(0, 0, 0); /* Sombra sutil */
+    color: #ffffff;
+    font-size: 2rem;
+    text-shadow: 8px 8px 24px rgb(0, 0, 0);
 }
+
+#sectionSlider .carousel-item {
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Para que los bordes redondeados afecten a la imagen */
+    transition: transform 0.5s ease;
+}
+
+#sectionSlider .carousel-item img {
+    object-fit: cover; /* Asegura que las imágenes mantengan proporción */
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* =====================
+   Estilos Responsivos para el Carrusel
+   ===================== */
 
 @media (max-width: 768px) {
     .carousel-item {
-        height: 40vh; /* Reducir la altura en pantallas medianas/pequeñas */
+        height: 40vh;
     }
     .carousel-caption h5 {
-        color: #ffeb3b; /* Color amarillo, puedes personalizarlo */
-        font-size: 1.5rem; /* Ajusta el tamaño si es necesario */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Agrega sombra al texto para mejor visibilidad */
+        font-size: 1.5rem;
+        color: #ffeb3b;
     }
 }
+
 @media (max-width: 576px) {
     .carousel-caption h5 {
-        font-size: 1.2rem; /* Reducir aún más en pantallas pequeñas */
+        font-size: 1.2rem;
     }
 }
 
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1030;
-}
-
+/* =====================
+   Contenedor Flexible
+   ===================== */
 
 .container {
     width: 90%;
@@ -102,7 +196,10 @@ body {
     padding: 20px;
 }
 
-/* Estilos para el Header */
+/* =====================
+   Sección del Header
+   ===================== */
+
 header {
     background-color: #6ab47b;
     color: white;
@@ -120,7 +217,10 @@ header p {
     font-size: 1.2em;
 }
 
-/* Estilos para las Secciones */
+/* =====================
+   Estilos para Secciones
+   ===================== */
+
 section {
     padding: 20px 0;
     background-color: white;
@@ -133,28 +233,121 @@ section {
     background-color: #f9f9f9;
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 50px;
-    color: #6ab47b;
-    text-align: center;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #6ab47b;
-    text-align: center;
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: block;
 }
 
-/* Estilos para el Mapa */
-#map {
-    height: 400px;
-    background-color: #e0e0e0;
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
     border-radius: 8px;
 }
 
-/* Estilos para el Footer */
+/* Mueve el texto a la parte superior */
+.caption {
+    position: absolute;
+    top: 0; /* Posiciona la leyenda en la parte superior */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el texto */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+}
+
+/* Controles de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Indicadores */
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #fff;
+}
+
+/* Mostrar el primer slide al cargar */
+.carousel-slide:first-child {
+    display: block;
+}
+
+/* =====================
+   Mapa Estilos
+   ===================== */
+
+#map, #mapGuatavita, #map-sumapaz, #map-Valledetenza {
+    height: 400px;
+    border-radius: 8px;
+}
+
+#mapGuatavita, #map-sumapaz {
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+#map-Valledetenza {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* =====================
+   Footer Estilos
+   ===================== */
+
 footer {
     background-color: #6ab47b;
     color: white;
@@ -167,91 +360,566 @@ footer p {
     font-size: 1em;
 }
 
-#mapGuatavita {
-    height: 400px;
-    width:  600px;
+/* =====================
+   Sección de Exploración (Explora)
+   ===================== */
+/* Estilo de la sección Explora */
+
+#explora {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#sectionSlider .carousel-item {
-    height: 400px; /* 60% de la altura de la ventana */
+.explora-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
 }
 
-#sectionSlider .carousel-item img {
-    object-fit: cover; /* Asegura que las imágenes mantengan proporción */
+.explora-image {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explora-image img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
-/* Estilo básico del timeline */
-.timeline {
+.explora-content {
+    flex: 1;
+    padding: 30px 30px;
+    color: #333;
+    background-color: rgba(0, 0, 0, 0.055); /* Fondo blanco semitransparente */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.flag-icon {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Estilos para cada lugar turístico con colores en el borde izquierdo */
+.explora-locations .location {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-yellow {
+    border-left: 5px solid #ffd700; /* Amarillo */
+}
+
+.location-blue {
+    border-left: 5px solid #0057b7; /* Azul */
+}
+
+.location-red {
+    border-left: 5px solid #d32f2f; /* Rojo */
+}
+
+.location-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color de texto */
+    display: block; /* Asegura que el enlace envuelva el bloque completo */
+}
+
+.location {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.location p {
+    flex: 1;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.location p strong {
+    font-size: 1.2em; /* Tamaño del título */
+    color: #2e7d32; /* Color del título */
+}
+
+.location-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+/* Fondo ligeramente transparente para las tarjetas */
+.location {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #00BCD4;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-.timeline-item {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
-
-.timeline-item.left {
-    left: 0;
-}
-
-.timeline-item.right {
-    left: 50%;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #00BCD4;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.timeline-item.right::after {
-    left: -17px;
-}
-
-.timeline-item h2, .timeline-item p {
-    padding: 5px;
-    background: #ffffff;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-}
-
-.timeline-item h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-#map-sumapaz {
-    height: 400px;
+    opacity: 0; /* Inicialmente invisible para animación */
+    animation: fadeIn 1s forwards; /* Efecto de aparición */
     margin-bottom: 20px;
 }
 
+/* Efecto hover para las tarjetas */
+.location:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ffca28; /* Cambia el color del borde al pasar el cursor (puedes cambiar el color según el color de cada tarjeta) */
+}
+
+/* Ajustes en el texto */
+.location p {
+    font-size: 0.95em; /* Reduce el tamaño del texto */
+    line-height: 1.6; /* Aumenta el espaciado entre líneas */
+    color: #333;
+}
+
+/* Efecto de animación de desvanecimiento */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto visual en el título de cada tarjeta */
+.location h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    color: #2e7d32;
+}
+
+/* Efectos en colores de borde según cada tarjeta (puedes ajustarlo a amarillo, azul, y rojo según sea necesario) */
+.location-yellow:hover {
+    border-color: #ffca28;
+}
+
+.location-blue:hover {
+    border-color: #1e88e5;
+}
+
+.location-red:hover {
+    border-color: #d32f2f;
+}
+
+/* =====================
+   Seccion Guatavita
+   ===================== */
+.hero-section {
+    position: relative;
+    background-image: url('/images/sections/guatavita/bg.webp'); /* Ruta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.925); /* Capa semitransparente */
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+    color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+/* Estilos para las columnas */
+.columns {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos para las "cards" */
+.map-card, .chart-section, .text-section, .guatavita-carousel {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.map {
+    width: 100%;
+    height: auto;
+    min-height: 300px; /* Ajuste mínimo para el mapa */
+    border-radius: 8px;
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-card, .chart-section, .text-section, .guatavita-carousel {
+        min-height: 200px;
+    }
+
+    .guatavita-carousel {
+        height: auto;
+    }
+}
+
+
+
+#sumapaz {
+    background-image: url('/images/sections/sumapaz/bg.webp'); /* Reemplaza con la ruta de la imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la sección */
+    background-position: center; /* Centra la imagen en la sección */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    position: relative;
+}
+
+#sumapaz::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.918); /* Fondo blanco semitransparente */
+    z-index: 1;
+}
+
+#sumapaz > * {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido de la sección esté por encima del fondo */
+}
+
+/* Estilos para las tarjetas */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Especificar min-height para que los cards de texto crezcan según el contenido */
+.text-card {
+    min-height: 200px; /* altura mínima */
+    flex-grow: 1;
+}
+
+/* Estilos para el video */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Mantiene una relación de aspecto 16:9 */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura = ancho * 9/16) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Fondo mientras se carga el video */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para el contenedor */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Quita el borde */
+}
+
+/* Columnas de igual altura */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajuste para expandir la columna izquierda */
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+/* Estilos para el botón */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el test */
+#quiz-sumapaz p {
+    margin-bottom: 10px;
+}
+#quiz-result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+#carouselSumapaz .carousel-item {
+    height: 600px; /* Altura fija en píxeles */
+}
+
+#carouselSumapaz .carousel-item img {
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    height: 100%;
+    width: 100%;
+}
+
+/* Responsive: cambiar a una columna en pantallas pequeñas */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    .col-md-6 {
+        max-width: 100%;
+    }
+}
+
+
+#valle-tenza {
+    position: relative;
+    background-image: url('/images/sections/valle/bg.webp'); /* Ruta de la imagen */
+    background-size: cover;          /* Ajusta el tamaño al contenedor */
+    background-position: center;     /* Centra la imagen */
+    background-repeat: no-repeat;    /* Evita la repetición */
+    padding: 40px 20px;              /* Ajusta el padding para el contenido */
+    color: #333;                     /* Color de texto que contraste */
+}
+
+#valle-tenza::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.897); /* Capa blanca semitransparente */
+    z-index: 1;
+    pointer-events: none;            /* Permite que el contenido sea clicable */
+}
+
+#valle-tenza .container {
+    position: relative;
+    z-index: 2;                      /* Eleva el contenido por encima de la capa */
+}
+
+#map-Valledetenza {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#sliderTenza .carousel-item {
+    height: 400px; /* Ajusta esta altura según tus necesidades */
+}
+
+#sliderTenza .carousel-item img {
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    width: 100%;
+    object-fit: cover; /* Cubre el contenedor sin distorsión */
+}
+
+/* Estilo para el card */
+.activities-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.activities-card .card-body {
+    padding: 20px;
+}
+
+/* Estilo para el título de la tarjeta */
+.activities-card .card-title {
+    font-size: 1.5em;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para la tabla */
+.activities-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.activities-table th, .activities-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.activities-table th {
+    background-color: #a8d5ba; /* Verde claro para los encabezados */
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.activities-table tr:nth-child(even) {
+    background-color: #eaf7eb; /* Verde más claro para filas alternas */
+}
+
+.activities-table tr:nth-child(odd) {
+    background-color: #f4fdf5; /* Verde más claro */
+}
+
+.activities-table td {
+    border-bottom: 1px solid #c8e3cd;
+}
+
+.activities-table td:first-child {
+    font-weight: bold;
+}
+
+
+
+
+/* =====================
+   Seccion Biodiversidad y Conservacion
+   ===================== */
+
+/* Contenedor principal */
+#biodiversidad-conservacion .container {
+    max-width: 1200px; /* Define el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Agrega espacio interno */
+}
+
+/* Contenedor de columnas */
+.columns {
+    display: flex; /* Alinea las columnas horizontalmente */
+    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas pequeñas */
+    gap: 20px; /* Espacio entre las columnas */
+}
+
+/* Estilo de cada columna individual */
+.column {
+    flex: 1 1 30%; /* Ajusta la columna para ocupar el 30% del espacio disponible */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la columna */
+    padding: 15px; /* Espacio interno de la columna */
+    border-radius: 8px; /* Esquinas redondeadas */
+    background-color: #fff; /* Fondo blanco para contraste */
+    transition: transform 0.2s; /* Efecto suave al pasar el cursor */
+}
+
+/* Efecto hover en columnas */
+.column:hover {
+    transform: translateY(-5px); /* Eleva la columna cuando se pasa el cursor */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para un efecto flotante */
+}
+
+/* Contenedor de imagen dentro de la columna */
+.img-container {
+    width: 100%;
+    height: 150px; /* Altura de la imagen */
+    overflow: hidden; /* Oculta cualquier parte desbordante de la imagen */
+    border-radius: 8px; /* Esquinas redondeadas de la imagen */
+    margin-bottom: 10px;
+}
+
+/* Ajuste de la imagen */
+.img-container img {
+    width: 100%; /* La imagen se ajusta al ancho del contenedor */
+    height: 100%; /* La imagen se ajusta a la altura del contenedor */
+    object-fit: cover; /* La imagen se recorta para llenar el espacio sin deformarse */
+}
+
+/* Texto corto en cada columna */
+.text-short {
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Responsivo: en pantallas pequeñas, las columnas se apilan */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column; /* Cambia de horizontal a vertical */
+    }
+}
+
+
+/* =====================
+   Video Responsive
+   ===================== */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 100%;
@@ -266,7 +934,10 @@ footer p {
     height: 100%;
 }
 
-/* Estilos del test interactivo */
+/* =====================
+   Test Interactivo
+   ===================== */
+
 .quiz-container {
     margin: 20px 0;
 }
@@ -311,13 +982,12 @@ input[type="radio"] {
     margin-top: 20px;
     font-size: 18px;
     text-align: center;
-    color: #27ae60;}
-
-#map-Valledetenza {
-    height: 400px;
-    width: 100%;
-    margin-bottom: 20px;
+    color: #27ae60;
 }
+
+/* =====================
+   Estilos para Tablas
+   ===================== */
 
 table {
     width: 100%;
@@ -345,11 +1015,7 @@ tr:hover {
     background-color: #f1f1f1;
 }
 
-td i {
-    color: #4CAF50;
-    margin-right: 8px;
-}
-
+/* Estilos Responsivos para Tablas */
 @media screen and (max-width: 768px) {
     table, th, td {
         display: block;
@@ -366,33 +1032,311 @@ td i {
     td {
         display: block;
         text-align: right;
-        position: relative;
         padding-left: 50%;
-        white-space: normal;
+        position: relative;
     }
     td:before {
         content: attr(data-label);
         position: absolute;
         left: 10px;
-        text-align: left;
         font-weight: bold;
+        text-align: left;
     }
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-ul li {
-    font-size: 18px;
-    margin: 10px 0;
-    line-height: 1.4;
+/* Lista de fichas horizontales */
+.highlighted-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.bullet {
-    color: #000000;
+.highlighted-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0; /* Línea separadora suave */
 }
+
+.highlighted-list li:last-child {
+    border-bottom: none; /* Sin línea en el último elemento */
+}
+
+.highlighted-list p {
+    font-size: 0.85em;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 8px;
+    color: #4CAF50; /* Color verde para destacar el icono */
+}
+
+.centered-item {
+    text-align: center;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 600px) {
+    .highlighted-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .icon {
+        margin-bottom: 4px;
+    }
+}
+
+/* Estructura de la galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste de columnas */
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;  /* Asegura que el ancho se ajuste al contenedor */
+    height: 200px;  /* Tamaño fijo para altura uniforme */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Llenado del contenedor sin distorsión */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+.gallery-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.info-fuente {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+}
+
+.info-fuente a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.info-fuente a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* Estilos generales */
+#biodiversidad-conservacion {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.918), rgba(255, 255, 255, 0.842)), 
+                      url('/images/sections/Bio/1.webp'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    color: #333;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté encima de la capa de fondo */
+}
+
+/* Contenedor principal de la cuadrícula */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    border-radius: 15px;
+    grid-template-areas:
+        "img-guatavita info-sumapaz img-valle"
+        "info-guatavita img-sumapaz info-valle";
+}
+
+/* Asignación de áreas */
+.img-guatavita { grid-area: img-guatavita; }
+.info-sumapaz { grid-area: info-sumapaz; }
+.img-valle { grid-area: img-valle; }
+.info-guatavita { grid-area: info-guatavita; }
+.img-sumapaz { grid-area: img-sumapaz; }
+.info-valle { grid-area: info-valle; }
+
+/* Estilos de los elementos del grid */
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.45); /* Fondo blanco con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de la imagen */
+.img-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%; /* Asegura que la imagen cubra toda el altura */
+    display: block;
+    object-fit: cover; /* Hace que la imagen cubra todo el contenedor sin distorsionarse */
+    border-radius: 10px; /* Redondea los bordes */
+}
+
+/* Lista destacada dentro del grid */
+.highlighted-list {
+    color: #333;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+/* Media queries para adaptabilidad */
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+        grid-template-areas:
+            "img-guatavita info-guatavita"
+            "img-sumapaz info-sumapaz"
+            "img-valle info-valle";
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-areas:
+            "img-guatavita"
+            "info-guatavita"
+            "img-sumapaz"
+            "info-sumapaz"
+            "img-valle"
+            "info-valle";
+    }
+}
+
+#contribuir-causa {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subheading {
+    color: #66bb6a;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step {
+    max-width: 300px;
+    text-align: center;
+    flex: 1;
+}
+
+.icon-circle {
+    border: 2px dashed #66bb6a;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.icon {
+    font-size: 2.5em;
+    color: #66bb6a;
+}
+
+h3 {
+    color: #2e7d32;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 1em;
+}
+
+.arrow {
+    font-size: 2em;
+    color: #66bb6a;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+    }
+    
+    .arrow {
+        display: none; /* Oculta las flechas en pantallas pequeñas */
+    }
+}
+
+
+

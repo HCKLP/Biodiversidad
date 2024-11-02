@@ -4,85 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorando la Biodiversidad en Cundinamarca y Boyacá</title>
-       <!-- Enlace a Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Enlace a Bootstrap JS (opcional si necesitas funcionalidad JS como dropdowns) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <link rel="stylesheet" href="css/estilos.css"> <!-- Vincula tu archivo CSS -->
-    <style>
-        /* Ajustar la altura del slider */
-       
-    </style>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Enlace a Leaflet para mapas y Chart.js para gráficos -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Vincula tu archivo CSS personalizado -->
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <a class="navbar-brand" href="#">BioRegionesVerdes</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#explora">Explora</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#guatavita">Laguna de Guatavita</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#sumapaz">Páramo de Sumapaz</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#valle-tenza">Valle de Tenza</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#biodiversidad-conservacion">Conservación</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#unete-causa">Únete a la Causa</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#explora">Explora</a></li>
+                <li class="nav-item"><a class="nav-link" href="#guatavita">Laguna de Guatavita</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sumapaz">Páramo de Sumapaz</a></li>
+                <li class="nav-item"><a class="nav-link" href="#valle-tenza">Valle de Tenza</a></li>
+                <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="#biodiversidad-conservacion">Conservación</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contribuir-causa">Únete a la Causa</a></li>
             </ul>
         </div>
     </nav>
-
-    <div id="sliderParamos" class="carousel  slide carousel-fade" data-ride="carousel">
-
-        <!-- Indicadores -->
+    
+    <!-- Slider principal -->
+    <div id="sliderParamos" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#sliderParamos" data-slide-to="0" class="active"></li>
             <li data-target="#sliderParamos" data-slide-to="1"></li>
             <li data-target="#sliderParamos" data-slide-to="2"></li>
         </ol>
-        <!-- Imágenes del slider -->
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="d-block w-100" src="images/1.jpg" alt="Primera imagen">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Laguna Guatavita</h5>
-                    <p>Secretos de la antigua ceremonia de El Dorado.</p>
+                    <h1 style="color: white; text-align: center;">Laguna Guatavita</h1>
+                    <p style="color: white; text-align: center;">Secretos de la antigua ceremonia de El Dorado.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/2.jpg" alt="Segunda imagen">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Páramo de Sumapaz</h5>
-                    <p>El páramo más grande del mundo.</p>
+                    <h1 style="color: white; text-align: center;">Páramo de Sumapaz</h1>
+                    <p style="color: white; text-align: center;">El páramo más grande del mundo.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="images/3.jpg" alt="Tercera imagen">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Valle de Tenza</h5>
-                    <p>Un paraíso oculto entre las montañas de Boyacá.</p>
+                    <h1 style="color: white; text-align: center;">Valle de Tenza</h1>
+                    <p style="color: white; text-align: center;">Un paraíso oculto entre las montañas de Boyacá.</p>
                 </div>
             </div>
         </div>
-        <!-- Controles de navegación -->
         <a class="carousel-control-prev" href="#sliderParamos" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
@@ -94,309 +74,501 @@
     </div>
 
     <section id="explora">
-        <div class="container">
-            <h1>Explora, Conoce y Protege Nuestros Tesoros Naturales</h1>
-
-            <p>Los paisajes vibrantes de <span class="emphasize">Boyacá</span> y <span class="emphasize">Cundinamarca</span> esconden riquezas naturales que no pueden quedar en el olvido. Desde los misterios de la <span class="emphasize">Laguna de Guatavita</span> hasta la serenidad del <span class="emphasize">Valle de Tenza</span> y la majestuosidad del <span class="emphasize">Páramo de Sumapaz</span>, cada rincón está lleno de vida, historia y biodiversidad.</p>
-        
-            <p>Estos ecosistemas enfrentan grandes desafíos, y es nuestro deber no solo admirarlos, sino también preservarlos. El <span class="emphasize">Páramo de Sumapaz</span>, el páramo más grande del mundo, juega un papel crucial en la regulación del agua para millones de personas. Cada especie, cada planta, y cada cuerpo de agua forman parte de un equilibrio delicado que debemos proteger.</p>
-        
-            <p>Te invitamos a descubrir estos paraísos naturales, a ser parte activa de su conservación, y a unirte a nosotros en la misión de cuidar el planeta para las futuras generaciones. 🌍💚</p>
+        <div class="explora-container">
+            <!-- Imagen a la izquierda, ocupando toda la altura -->
+            <div class="explora-image">
+                <img src="/images/sections/explora/colombia.png" alt="Paisaje de naturaleza en Colombia">
+            </div>
+    
+                <!-- Contenido de texto a la derecha -->
+            <div class="explora-content">
+                <h2>
+                    Explora los Tesoros Naturales de Colombia
+                </h2>
+                <div class="explora-locations">
+                    <a href="#guatavita" class="location-link">
+                        <div class="location location-yellow">
+                            <p><strong>🌊 Guatavita y su Laguna</strong><br>
+                               Sumérgete en la leyenda de la <strong>Laguna de Guatavita</strong>, un lugar sagrado para los Muiscas. Explora sus tranquilas aguas y disfruta de la historia en este lugar místico que evoca la famosa leyenda de El Dorado.
+                            </p>
+                            <img src="/images/cards/1.jpg" alt="Imagen de la Laguna de Guatavita" class="location-image">
+                        </div>
+                    </a>
+                    
+                    <a href="#sumapaz" class="location-link">
+                        <div class="location location-blue">
+                            <p><strong>⛰️ Páramo de Sumapaz</strong><br>
+                               Descubre el <strong>Páramo de Sumapaz</strong>, el páramo más grande del mundo, donde la biodiversidad única y el aire fresco te invitan a una experiencia en contacto directo con la naturaleza. Un refugio de cóndores y frailejones que no puedes perderte.
+                            </p>
+                            <img src="/images/cards/2.png" alt="Imagen del Páramo de Sumapaz" class="location-image">
+                        </div>
+                    </a>
+                    
+                    <a href="#valle-tenza" class="location-link">
+                        <div class="location location-red">
+                            <p><strong>🌄 Valle de Tenza</strong><br>
+                               Déjate sorprender por la serenidad del <strong>Valle de Tenza</strong>, rodeado de montañas y un ambiente rural acogedor. Este valle es perfecto para desconectar y sumergirse en la belleza natural y la cultura campesina de Colombia.
+                            </p>
+                            <img src="/images/cards/3.jpg" alt="Imagen del Valle de Tenza" class="location-image">
+                        </div>
+                    </a>
+                     
+                </div>
+            </div>
         </div>
     </section>
-
-    <section id="guatavita">
-        <div class="container">
-            <h1>Laguna de Guatavita</h1>
-            <div class="row">
-                <!-- Columna izquierda: Slider de imágenes -->
-                <div class="col-md-6">
-                    <div id="sectionSlider" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#sectionSlider" data-slide-to="0" class="active"></li>
-                            <li data-target="#sectionSlider" data-slide-to="1"></li>
-                            <li data-target="#sectionSlider" data-slide-to="2"></li>
-                        </ol>
+    
+    <section id="guatavita" class="hero-section">
+        <div class="hero-content">
+            <h1 class="section-title">Laguna de Guatavita</h1>
+    
+            <div class="columns">
+                <!-- Columna izquierda con dos filas: mapa y gráfico -->
+                <div class="left-column">
+                    <div class="map-card">
+                        <h3>Ubicación</h3>
+                        <div id="mapGuatavita" class="map"></div>
+                    </div>
+                    <div class="chart-section">
+                        <p>Gráfico de visitas (en construcción)</p>
+                        <canvas id="visitsChart" class="chart-placeholder"></canvas>
+                    </div>
+                </div>
+    
+                <!-- Columna derecha con dos filas: texto y carrusel -->
+                <div class="right-column">
+                    <div class="text-section">
+                        <p>🌄 En el corazón de Cundinamarca, la Laguna de Guatavita te espera con su misticismo y biodiversidad 🌿✨. Sumérgete en la historia de la cultura Muisca, rodeado de flora y fauna únicas 🐦🌺, y deja que el encanto de este santuario natural te conecte con la esencia de la tierra 🌍. ¡Ven y descubre la magia de Guatavita! 💧🧭</p>
+                    </div>
+                    <div id="carouselSumapaz" class="carousel slide" data-ride="carousel" data-interval="3000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/guatavita/1.jpg" class="d-block w-100" alt="Laguna de Guatavita 1">
+                                <img src="/images/guatavita/1.jpg" class="d-block w-100" alt="Paisaje del Páramo">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/guatavita/2.jpg" class="d-block w-100" alt="Laguna de Guatavita 2">
+                                <img src="/images/guatavita/2.jpg" class="d-block w-100" alt="Vegetación del Páramo">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/guatavita/3.jpg" class="d-block w-100" alt="Laguna de Guatavita 3">
+                                <img src="/images/guatavita/3.jpg" class="d-block w-100" alt="Fauna del Páramo">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#sectionSlider" role="button" data-slide="prev">
+                        <!-- Controles del Carrusel -->
+                        <a class="carousel-control-prev" href="#carouselSumapaz" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Anterior</span>
                         </a>
-                        <a class="carousel-control-next" href="#sectionSlider" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselSumapaz" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Siguiente</span>
                         </a>
                     </div>
-                </div>
-    
-                <!-- Columna derecha: Mapa interactivo -->
-                <div class="col-md-6">
-                    <h2>Misticismo y Leyenda en el Corazón de los Andes</h2>
-                    <p>Ubicada en el corazón de Cundinamarca, la <span class="emphasize">Laguna de Guatavita</span> te espera con su fascinante historia y su belleza natural. 🏞️ Conocida por el mito de El Dorado, esta joya escondida entre las montañas te conectará con la cultura ancestral de los Muiscas. 🌊✨</p>
-                    <p>Ven a explorar este tesoro natural y ayuda a preservarlo para las futuras generaciones. 🌍💚</p>
-                </div>
-            </div>
-
-            <div class="row">
-                 <!-- Columna derecha: Mapa interactivo -->
-                 <div class="col-md-6">
-                    <h2>Ubicación</h2>
-                    <p>📍 <b>Laguna de Guatavita</b>, ubicada en el hermoso municipio de <b>Sesquilé</b>, a solo <b>75 km</b> al noreste de <b>Bogotá</b>, en el departamento de <b>Cundinamarca</b>, Colombia. 🌄 Rodeada por majestuosas montañas y ubicada a una impresionante altitud de <b>3,100 metros</b> sobre el nivel del mar, esta laguna forma parte de la región del <b>Altiplano Cundiboyacense</b>, famosa por sus paisajes andinos y su riqueza cultural. 🌿✨</p>
-                    <p>La <b>Laguna de Guatavita</b> es un lugar lleno de misticismo e historia, siendo el centro de la legendaria búsqueda de <i>El Dorado</i>, y un sitio sagrado para los antiguos <b>Muiscas</b>. 🏞️⛏️ Ven y descubre sus secretos, mientras disfrutas de una experiencia única en contacto con la naturaleza. 🌊💚</p>
-
-                </div>
                     
-                <div class="col-md-6">
-                    <div id="mapGuatavita"></div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Timeline de la Biodiversidad de la Laguna -->
-        <h2>Peligro de Extinción en la Laguna de Guatavita</h2>
-
-        <div class="timeline">
-            <div class="timeline-item left">
-                <h2>Época Precolombina</h2>
-                <p>Los Muiscas manejaban de manera sostenible el ecosistema, manteniéndolo prácticamente intacto.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <h2>Siglo XVI - Colonización</h2>
-                <p>Intentos de drenar la laguna para extraer oro afectaron gravemente el ecosistema.</p>
-            </div>
-
-            <div class="timeline-item left">
-                <h2>Siglo XIX - Explotación</h2>
-                <p>La explotación agrícola y minera intensificó la degradación del ecosistema.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <h2>1980 - Primeros esfuerzos de conservación</h2>
-                <p>Inician medidas de protección para restaurar el ecosistema de la laguna.</p>
-            </div>
-
-            <div class="timeline-item left">
-                <h2>2010 - Presión turística</h2>
-                <p>El turismo no regulado contribuye a la degradación del ecosistema y pone en peligro especies.</p>
-            </div>
-
-            <div class="timeline-item right">
-                <h2>2020 - Cambio climático</h2>
-                <p>El cambio climático impacta directamente en el ciclo del agua y la biodiversidad.</p>
             </div>
         </div>
     </section>
 
     <section id="sumapaz">
         <div class="container">
-            <h1>Páramo de Sumapaz</h1>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Un Ecosistema Vital 🌿</h2>
-
-                    <p>El <span class="emphasize">Páramo de Sumapaz</span>, ubicado en la <span class="emphasize">cordillera oriental de Colombia</span>, es el páramo más grande del mundo 🌍 y un ecosistema vital para la vida en la región. Este territorio único alberga una rica biodiversidad, incluyendo especies emblemáticas como el <span class="emphasize">frailejón</span> 🌱, el <span class="emphasize">oso de anteojos</span> 🐻 y una variedad de aves endémicas 🐦.</p>
-                    <p>Además, los páramos, incluyendo el de <span class="emphasize">Sumapaz</span>, son fundamentales para la <span class="emphasize">regulación del ciclo del agua</span> 💧. Estos ecosistemas actúan como esponjas naturales que retienen y filtran el agua de lluvia, asegurando el suministro de agua dulce a millones de personas en <span class="emphasize">Bogotá</span> y otras ciudades cercanas.</p>
-                              
-                </div>
-
-                <div class="col-md-6">
-                    <h2>Ubicación</h2>
-                    <div id="map-sumapaz"></div>
-                </div>
-            </div>
-
-            <h2>Conoce el Páramo de Sumapaz: Un Tesoro Natural que Necesita de Ti</h2>
+            
+            <!-- Título de la Sección -->
+            <h1 class="text-center">Páramo de Sumapaz</h1>
+    
+            <!-- Video -->
             <div class="video-container">
                 <iframe width="560" height="400" src="https://www.youtube.com/embed/Q59WHDFNgD4?si=PK0nSkgm8DepBFne" 
-                title="Páramo de Sumapaz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    title="Páramo de Sumapaz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
-            </div> 
-
-                  <!-- Test Interactivo -->
-                  <div class="quiz-container">
-                    <h2>🌿 Test sobre el Páramo de Sumapaz 🌿</h2>
-                        <form id="quiz-sumapaz">
-                            <p>🌱 <strong>1. ¿Qué planta es esencial para la regulación del agua en el Páramo de Sumapaz?</strong></p>
-                            <label><input type="radio" name="question1" value="incorrecto"> Cactus 🌵</label><br>
-                            <label><input type="radio" name="question1" value="correcto"> Frailejón 🌿</label><br>
-                           
-
-                            <p>🐾 <strong>2. ¿Qué amenaza enfrenta actualmente la biodiversidad del Páramo de Sumapaz?</strong></p>
-                            <label><input type="radio" name="question2" value="correcto"> Cambio climático 🌦️</label><br>
-                            <label><input type="radio" name="question2" value="incorrecto"> Actividad volcánica 🌋</label><br>
-
-                            <p>💧 <strong>3. ¿Qué porcentaje del agua potable de Bogotá proviene del Páramo de Sumapaz?</strong></p>
-                            <label><input type="radio" name="question3" value="correcto"> 50%</label><br>
-                            <label><input type="radio" name="question3" value="incorrecto"> 70%</label><br>
-
-                            <p>🐻 <strong>4. ¿Qué especie emblemática de oso vive en el Páramo de Sumapaz?</strong></p>
-                            <label><input type="radio" name="question4" value="incorrecto"> Oso polar 🐻‍❄️</label><br>
-                            <label><input type="radio" name="question4" value="correcto"> Oso de anteojos 🐻</label><br>
-                         
-
-                            <p>🌍 <strong>5. ¿Cuál es la función ecológica principal del frailejón en los páramos?</strong></p>
-                            <label><input type="radio" name="question5" value="incorrecto"> Produce oxígeno</label><br>
-                            <label><input type="radio" name="question5" value="correcto"> Retiene y filtra el agua</label><br>
-                           
-
-                            <p>🔥 <strong>6. ¿Qué amenaza humana está afectando gravemente al Páramo de Sumapaz?</strong></p>
-                            <label><input type="radio" name="question6" value="correcto"> Deforestación</label><br>
-                            <label><input type="radio" name="question6" value="incorrecto"> Sobrepoblación de fauna</label><br>
-
-                            <button type="button" id="submit-quiz" class="submit-btn">Enviar respuestas 🌟</button>
-                        </form>
-                    <div id="quiz-result"></div>
-                
-                </div>
-
-            <p>Conservar el <span class="emphasize">Páramo de Sumapaz</span> no solo significa proteger su biodiversidad 🌱, sino también garantizar la calidad y disponibilidad de agua para millones de personas 💧. ¡Es un tesoro natural que debemos preservar! 🌍💚</p>
-                
-        </div>
-    </section>
-
-    <section id="valle-tenza">
-        <div class="container">
-            <h1>El Valle de Tenza</h1>
-
-            <div class="row">
+            </div>
+    
+            <!-- Grid layout con dos columnas -->
+            <div class="row mt-4">
+                <!-- Columna Izquierda con Información, Mapa y Carrusel -->
                 <div class="col-md-6">
-                    <div id="sliderTenza" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#sliderTenza" data-slide-to="0" class="active"></li>
-                            <li data-target="#sliderTenza" data-slide-to="1"></li>
-                            <li data-target="#sliderTenza" data-slide-to="2"></li>
-                            <li data-target="#sliderTenza" data-slide-to="3"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/tenza/1.jpg" class="d-block w-100" alt="Laguna de Guatavita 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/tenza/2.jpg" class="d-block w-100" alt="Laguna de Guatavita 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/tenza/3.jpg" class="d-block w-100" alt="Laguna de Guatavita 3">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/tenza/4.jpg" class="d-block w-100" alt="Laguna de Guatavita 3">
+                    
+                    <!-- Card para Información del Ecosistema -->
+                    <div class="card mb-4 text-card">
+                        <div class="card-body">
+                            <h2 class="card-title">Un Ecosistema Vital 🌿</h2>
+                            <p class="card-text">El <span class="emphasize">Páramo de Sumapaz</span>, ubicado en la <span class="emphasize">cordillera oriental de Colombia</span>, es el páramo más grande del mundo 🌍 y un ecosistema vital para la vida en la región. Este territorio único alberga una rica biodiversidad, incluyendo especies emblemáticas como el <span class="emphasize">frailejón</span> 🌱, el <span class="emphasize">oso de anteojos</span> 🐻 y una variedad de aves endémicas 🐦.</p>
+                            <p class="card-text">Además, los páramos, incluyendo el de <span class="emphasize">Sumapaz</span>, son fundamentales para la <span class="emphasize">regulación del ciclo del agua</span> 💧. Estos ecosistemas actúan como esponjas naturales que retienen y filtran el agua de lluvia, asegurando el suministro de agua dulce a millones de personas en <span class="emphasize">Bogotá</span> y otras ciudades cercanas.</p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4 flex-grow-1">
+                        <div class="card-body">
+                            <h2 class="card-title">Explora el Páramo de Sumapaz</h2>
+                            <div id="carouselSumapaz" class="carousel slide" data-ride="carousel" data-interval="3000">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/images/sections/sumapaz/1.jpg" class="d-block w-100" alt="Paisaje del Páramo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/sections/sumapaz/2.jpg" class="d-block w-100" alt="Vegetación del Páramo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/sections/sumapaz/3.jpg" class="d-block w-100" alt="Fauna del Páramo">
+                                    </div>
+                                </div>
+                                <!-- Controles del Carrusel -->
+                                <a class="carousel-control-prev" href="#carouselSumapaz" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Anterior</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselSumapaz" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Siguiente</span>
+                                </a>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#sliderTenza" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="carousel-control-next" href="#sliderTenza" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Siguiente</span>
-                        </a>
+                    </div>
+
+                     <!-- Card para Mapa -->
+                    <div class="card mb-4 flex-grow-1">
+                        <div class="card-body">
+                            <h2 class="card-title">Ubicación</h2>
+                            <div id="map-sumapaz" style="height: 300px; width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+    
+                <!-- Columna Derecha con Test -->
+                <div class="col-md-6 d-flex flex-column">
+                    <div class="card test-card">
+                        <div class="card-body">
+                            <h2 class="card-title">🌿 Test sobre el Páramo de Sumapaz 🌿</h2>
+                            <form id="quiz-sumapaz">
+                                <!-- Pregunta 1 -->
+                                <p>🌱 <strong>1. ¿Qué planta es esencial para la regulación del agua en el Páramo de Sumapaz?</strong></p>
+                                <label><input type="radio" name="question1" value="incorrecto"> Cactus 🌵</label><br>
+                                <label><input type="radio" name="question1" value="correcto"> Frailejón 🌿</label><br>
+    
+                                <!-- Pregunta 2 -->
+                                <p>🐾 <strong>2. ¿Qué amenaza enfrenta actualmente la biodiversidad del Páramo de Sumapaz?</strong></p>
+                                <label><input type="radio" name="question2" value="correcto"> Cambio climático 🌦️</label><br>
+                                <label><input type="radio" name="question2" value="incorrecto"> Actividad volcánica 🌋</label><br>
+    
+                                <!-- Pregunta 3 -->
+                                <p>💧 <strong>3. ¿Qué porcentaje del agua potable de Bogotá proviene del Páramo de Sumapaz?</strong></p>
+                                <label><input type="radio" name="question3" value="correcto"> 50%</label><br>
+                                <label><input type="radio" name="question3" value="incorrecto"> 70%</label><br>
+    
+                                <!-- Pregunta 4 -->
+                                <p>🐻 <strong>4. ¿Qué especie emblemática de oso vive en el Páramo de Sumapaz?</strong></p>
+                                <label><input type="radio" name="question4" value="incorrecto"> Oso polar 🐻‍❄️</label><br>
+                                <label><input type="radio" name="question4" value="correcto"> Oso de anteojos 🐻</label><br>
+    
+                                <!-- Pregunta 5 -->
+                                <p>🌍 <strong>5. ¿Cuál es la función ecológica principal del frailejón en los páramos?</strong></p>
+                                <label><input type="radio" name="question5" value="incorrecto"> Produce oxígeno</label><br>
+                                <label><input type="radio" name="question5" value="correcto"> Retiene y filtra el agua</label><br>
+    
+                                <!-- Pregunta 6 -->
+                                <p>🔥 <strong>6. ¿Qué amenaza humana está afectando gravemente al Páramo de Sumapaz?</strong></p>
+                                <label><input type="radio" name="question6" value="correcto"> Deforestación</label><br>
+                                <label><input type="radio" name="question6" value="incorrecto"> Sobrepoblación de fauna</label><br>
+    
+                                <button type="button" id="submit-quiz" class="submit-btn btn btn-primary mt-3">Enviar respuestas 🌟</button>
+                            </form>
+                            <div id="quiz-result"></div>
+                        </div>
                     </div>
                 </div>
+            </div>     
+        </div>
+    </section>
+    
+    
+    
+    <section id="valle-tenza">
+        <div class="container">
+            <h1 class="text-center">El Valle de Tenza</h1>
+    
+            <div class="row">
+                <div class="col-12">
+                    <!-- Primera fila: Descripción y Actividades -->
+                    <div class="mb-4">
+                        <p>El <span class="emphasize">Valle de Tenza</span> te espera con sus maravillosos paisajes, su rica biodiversidad y una serie de actividades que te conectarán con la naturaleza. Desde <span class="emphasize">senderismo en las montañas de Guateque</span> hasta relajantes <span class="emphasize">paseos en el Embalse La Esmeralda</span>, este paraíso colombiano tiene algo para todos. Pero recuerda, ¡tu visita puede marcar la diferencia! 🌍</p>
+    
+                        <div class="card activities-card">
+                            <div class="card-body">
+                                <h2 class="card-title">Actividades Imperdibles 🏞️</h2>
+                                <table class="activities-table">
+                                    <tr>
+                                        <th>Actividad</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                    <tr>
+                                        <td>🥾 Senderismo y rutas de montaña</td>
+                                        <td>En Guateque, explora rutas de montaña y disfruta del paisaje.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🌿 Visitas a reservas naturales</td>
+                                        <td>Participa en actividades de ecoturismo en las reservas locales.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>💧 Exploración de cascadas y ríos</td>
+                                        <td>Descubre las maravillas naturales en Garagoa.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>📸 Fotografía de paisajes impresionantes</td>
+                                        <td>Captura la belleza natural del Valle de Tenza.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🚴‍♂️ Ciclismo de montaña y rutas escénicas</td>
+                                        <td>Recorre las rutas en bicicleta y disfruta de vistas espectaculares.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>💎 Visitas culturales a minas de esmeraldas</td>
+                                        <td>Explora la historia y las minas en Somondoco.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🍽️ Turismo gastronómico</td>
+                                        <td>Prueba los sabores locales y disfruta de la gastronomía colombiana.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        
 
-                <div class="col-md-6">
-
-                    <p>El <span class="emphasize">Valle de Tenza</span> te espera con sus maravillosos paisajes, su rica biodiversidad y una serie de actividades que te conectarán con la naturaleza. Desde <span class="emphasize">senderismo en las montañas de Guateque</span> hasta relajantes <span class="emphasize">paseos en el Embalse La Esmeralda</span>, este paraíso colombiano tiene algo para todos. Pero recuerda, ¡tu visita puede marcar la diferencia! 🌍</p>
-                
-                    <h2>Actividades Imperdibles 🏞️</h2>
-                    <ul>
-                        <li>Senderismo y rutas de montaña en Guateque 🥾</li>
-                        <li>Visitas a reservas naturales y ecoturismo 🌿</li>
-                        <li>Exploración de cascadas y ríos en Garagoa 💧</li>
-                        <li>Fotografía de paisajes impresionantes 📸</li>
-                        <li>Ciclismo de montaña y rutas escénicas 🚴‍♂️</li>
-                        <li>Visitas culturales a las minas de esmeraldas en Somondoco 💎</li>
-                        <li>Turismo gastronómico con sabores locales 🍽️</li>
-                    </ul>
-                
-                    <h2>Cuida el Entorno Natural 🌱</h2>
-                    <p>Mientras disfrutas de las maravillas del Valle de Tenza, es importante que contribuyamos juntos a proteger su biodiversidad. Aquí te dejamos algunas recomendaciones para practicar un turismo responsable y cuidar este increíble paraíso:</p>
-                    
-                    <ul>
-                        <li class="bullet">♻️ <strong>No dejes rastro:</strong> lleva contigo tu basura y deposítala en los lugares correctos.</li>
-                        <li class="bullet">🦋 <strong>Respeta la flora y fauna:</strong> evita recoger plantas o molestar a los animales en su hábitat.</li>
-                        <li class="bullet">💧 <strong>Usa productos biodegradables:</strong> si haces picnic o acampas, procura que los productos que utilices no dañen el ambiente.</li>
-                        <li class="bullet">👨‍🌾 <strong>Apoya a los locales:</strong> elige guías locales y productos autóctonos que fomenten un turismo sostenible.</li>
-                    </ul>
-                </div>
-
-                <div class="col-md-6">
-                    <h2>Ubicación</h2>
-                    <div id="map-Valledetenza"></div>
-                </div>
-                
-                <div class="col-md-6">
-                    <section id="grafico">
-                        <h2>Turismo del Valle de Tenza (2015-2023)</h2>
-                        <canvas id="tourismChart" width="400" height="260"></canvas>
-                    </section>
+                    </div>
+    
+                    <!-- Segunda fila: Slider/Carrusel -->
+                    <div class="mb-4">
+                        <div id="sliderTenza" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#sliderTenza" data-slide-to="0" class="active"></li>
+                                <li data-target="#sliderTenza" data-slide-to="1"></li>
+                                <li data-target="#sliderTenza" data-slide-to="2"></li>
+                                <li data-target="#sliderTenza" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/tenza/1.jpg" class="d-block w-100" alt="Laguna de Guatavita 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/tenza/2.jpg" class="d-block w-100" alt="Laguna de Guatavita 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/tenza/3.jpg" class="d-block w-100" alt="Laguna de Guatavita 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/tenza/4.jpg" class="d-block w-100" alt="Laguna de Guatavita 4">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#sliderTenza" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#sliderTenza" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Tercera fila: Mapa de Ubicación -->
+                    <div class="mb-4">
+                        <h2>Ubicación</h2>
+                        <div id="map-Valledetenza" style="height: 400px; border-radius: 8px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Nueva Sección Galería -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <h1>Galería de Especies en Boyacá y Cundinamarca</h1>
+           <div id="contenido-galeria">
+                <script>
+                    fetch("/scripts/galeria.html")
+                        .then(response => response.text())
+                        .then(data => document.getElementById("contenido-galeria").innerHTML = data);
+                </script>
+            </div>
+            <p class="info-fuente">
+                🌎 Información proporcionada por: 
+                <a href="https://colombia.inaturalist.org/" target="_blank" rel="noopener noreferrer">iNaturalist Colombia</a>
+            </p>
+        </div>
+    </section>
+    
 
     <section id="biodiversidad-conservacion">
         <div class="container">
-            <h1>🌿 Protegiendo Nuestra Biodiversidad: Esfuerzos y Desafíos en Guatavita, Sumapaz y el Valle de Tenza 🌿</h1>
+            <h1>Protección de la Biodiversidad en Colombia</h1>
     
-            <p>Las regiones de Guatavita, Sumapaz y el Valle de Tenza son conocidas no solo por su majestuosidad natural, sino también por albergar una rica biodiversidad que ha sido testigo de miles de años de evolución. Estas zonas representan ecosistemas únicos en Colombia, pero también enfrentan una serie de desafíos relacionados con su conservación. Hoy en día, el compromiso por proteger estas áreas es más crucial que nunca. 🌍</p>
-        
-            <h2>Esfuerzos de Conservación 💚</h2>
-            <p>A lo largo de los años, se han llevado a cabo iniciativas significativas para proteger la biodiversidad en estas zonas, destacándose proyectos de reforestación, la promoción del ecoturismo responsable y la preservación de especies en peligro.</p>
-        
-            <ul>
-                <li>Guatavita: Reconocida por su legendaria Laguna de Guatavita, esta región alberga un entorno de alta montaña que ha sido objeto de proyectos de conservación de agua y fauna local, protegiendo especies como el oso de anteojos y el águila real.</li>
-                <li>Sumapaz: Hogar del páramo más grande del mundo, Sumapaz es clave en la regulación del agua que abastece a millones de personas. Los esfuerzos aquí incluyen la restauración de zonas afectadas por la agricultura y la protección del frailejón, una planta esencial para la retención de agua.</li>
-                <li>Valle de Tenza: Con su diversidad de ecosistemas, desde montañas hasta ríos, el Valle de Tenza ha sido escenario de proyectos de ecoturismo que promueven prácticas sostenibles, como el turismo educativo en áreas protegidas y el manejo responsable de los recursos naturales. 🌿</li>
-            </ul>
-        
-            <h2>Desafíos Actuales 🌱</h2>
-            <p>A pesar de los esfuerzos, la biodiversidad de Guatavita, Sumapaz y el Valle de Tenza enfrenta desafíos importantes, muchos de ellos impulsados por la actividad humana y el cambio climático. Entre los principales retos se encuentran:</p>
-        
-            <ul>
-                <li class="bullet">⚠️ Deforestación: La tala descontrolada en algunas zonas cercanas a Guatavita y Sumapaz ha afectado seriamente la fauna y la flora nativa, disminuyendo su capacidad de adaptación.</li>
-                <li class="bullet">💧 Pérdida de agua: En Sumapaz, los impactos del cambio climático están alterando los ciclos del agua, reduciendo la capacidad de los páramos para retener este recurso vital.</li>
-                <li class="bullet">🚜 Agricultura no sostenible: En el Valle de Tenza, algunas prácticas agrícolas han degradado los suelos y afectado el equilibrio de los ecosistemas, poniendo en peligro especies autóctonas.</li>
-            </ul>
+            <div class="grid-container">
+                <!-- Imagen del páramo de Guatavita -->
+                <div class="grid-item img-guatavita">
+                    <div class="img-container">
+                        <img src="/images/sections/Bio/oso.png" alt="Imagen del páramo de Guatavita">
+                    </div>
+                </div>
+    
+                <!-- Información de Sumapaz -->
+                <div class="grid-item info-sumapaz">
+                    <ul class="highlighted-list">
+                        <li class="centered-item">
+                            <p><span class="icon">📍</span> <strong>Sumapaz</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌿</span> El páramo más grande del mundo, crucial para la regulación hídrica.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🦅</span> Refugio de especies emblemáticas como el cóndor de los Andes y el venado de páramo.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">💧</span> Generador de agua para millones de personas y vital para la biodiversidad.</p>
+                        </li>
+                        <li class="centered-item">
+                            <p><span class="icon">🚨</span> <strong>Retos de Conservación</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">⚠️</span> Minería ilegal que afecta el ecosistema y los recursos hídricos.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🔥</span> Incendios forestales que amenazan la biodiversidad y el suelo del páramo.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌍</span> Cambio climático que altera los patrones de agua y afecta la vegetación.</p>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Imagen del valle de Tenza -->
+                <div class="grid-item img-valle">
+                    <div class="img-container">
+                        <img src="/images/sections/Bio/tigrillo.png" alt="Imagen del valle de Tenza">
+                    </div>
+                </div>
+    
+                <!-- Información de Guatavita -->
+                <div class="grid-item info-guatavita">
+                    <ul class="highlighted-list">
+                        <li class="centered-item">
+                            <p><span class="icon">📍</span> <strong>Guatavita</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌊</span> Un símbolo natural de gran valor ecológico en Colombia.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🐻</span> Hogar del oso de anteojos y el águila real.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">💧</span> Reforestación y protección de fuentes hídricas.</p>
+                        </li>
+                        <li class="centered-item">
+                            <p><span class="icon">🚨</span> <strong>Retos de Conservación</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">⚠️</span> Tala descontrolada que afecta flora y fauna.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌲</span> Reducción de biodiversidad y retención de agua.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌍</span> Reforestación para rehabilitar ecosistemas.</p>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Imagen de Sumapaz -->
+                <div class="grid-item img-sumapaz">
+                    <div class="img-container">
+                        <img src="/images/sections/Bio/condor.png" alt="Imagen del páramo de Sumapaz">
+                    </div>
+                </div>
+    
+                <!-- Información del Valle de Tenza -->
+                <div class="grid-item info-valle">
+                    <ul class="highlighted-list">
+                        <li class="centered-item">
+                            <p><span class="icon">📍</span> <strong>Valle de Tenza</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌄</span> Región de belleza natural y gran diversidad de paisajes y ecosistemas.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🐱</span> Hábitat de mamíferos endémicos como el tigrillo.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌱</span> Zona agrícola con prácticas sostenibles que protegen la biodiversidad.</p>
+                        </li>
+                        <li class="centered-item">
+                            <p><span class="icon">🚨</span> <strong>Retos de Conservación</strong></p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🚜</span> Expansión agrícola y ganadera que amenaza los ecosistemas nativos.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌊</span> Contaminación de fuentes hídricas por uso de fertilizantes y pesticidas.</p>
+                        </li>
+                        <li>
+                            <p><span class="icon">🌐</span> Pérdida de biodiversidad y fragmentación de hábitats naturales.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="contribuir-causa">
+        <div class="container">
+            <h1>Construyendo un Futuro Sostenible</h1>
+    
+            <div class="steps">
+                <div class="step">
+                    <div class="icon-circle">
+                        <span class="icon">♻️</span>
+                    </div>
+                    <h3>Ecoturismo Responsable</h3>
+                    <p>Apoya guías locales y respeta el medio ambiente y las culturas.</p>
+                </div>
+                <div class="arrow">➔</div>
+                <div class="step">
+                    <div class="icon-circle">
+                        <span class="icon">🌱</span>
+                    </div>
+                    <h3>Reduce Tu Huella</h3>
+                    <p>Minimiza el uso de plásticos y lleva contigo lo que ingreses.</p>
+                </div>
+                <div class="arrow">➔</div>
+                <div class="step">
+                    <div class="icon-circle">
+                        <span class="icon">💧</span>
+                    </div>
+                    <h3>Respeto por el Agua</h3>
+                    <p>Usa solo el agua necesaria y evita contaminar ríos y lagunas.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="unete-causa">
-        <div class="container">
-            <h1>¿Cómo Puedes Contribuir? 🌍</h1>
-            <p>Como visitante o amante de la naturaleza, puedes ser parte de la solución y ayudar a proteger estos frágiles ecosistemas. Aquí te dejamos algunas recomendaciones:</p>
-            
-            <ul>
-                <li class="bullet">♻️ Practica el ecoturismo: Cuando visites estas áreas, opta por guías locales que promuevan el respeto por el medio ambiente y las culturas locales.</li>
-                <li class="bullet">🌱 Reduce tu huella: Minimiza el uso de plástico y lleva contigo todo lo que ingreses a las zonas naturales.</li>
-                <li class="bullet">💧 Respeta el agua: El agua es un recurso esencial en Sumapaz y Guatavita; usa solo lo necesario y evita contaminar ríos y lagunas.</li>
-            </ul>
-        
-            <p>Protegiendo estos ecosistemas, estamos asegurando no solo la biodiversidad de Colombia, sino también el futuro de nuestras generaciones. ¡Únete a la causa y sé un defensor activo de la naturaleza! 🌍💚</p>
-        
-        </div>
-    </section>
+   <!-- Footer -->
+   <footer>
+    <div class="container">
+        <p>Protege hoy, disfruta siempre. 🌿</p>
+    </div>
+</footer>
 
-    <footer>
-        <div class="container">
-            <p>Protege hoy, disfruta siempre. 🌿</p>
-        </div>
-    </footer>
 
-    <script src="js/menu.js"></script> 
-    <script src="js/map.js"></script>
-    <script src="js/guatavita.js"></script>
-    <script src="js/sumapaz.js"></script>
-    <script src="js/valledeltenza.js"></script>
+<!-- Scripts: jQuery, Bootstrap y otros -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Scripts personalizados -->
+
+<script src="js/menu.js"></script> 
+<script src="js/guatavita.js"></script>
+<script src="js/scripts.js"></script> 
+<script src="js/sumapaz.js"></script>
+<script src="js/valledeltenza.js"></script>
 </body>
 </html>

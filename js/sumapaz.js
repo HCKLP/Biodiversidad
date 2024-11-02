@@ -42,3 +42,4 @@ document.getElementById('submit-quiz').addEventListener('click', function() {
     var resultText = "🎉 ¡Has acertado " + score + " de 6 preguntas! 🎉";
     document.getElementById('quiz-result').innerHTML = "<p style='color:green;'>" + resultText + "</p>";
 });
+
